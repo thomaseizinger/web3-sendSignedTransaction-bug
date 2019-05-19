@@ -29,6 +29,7 @@ describe("sendSignedTransaction", () => {
                 `http://localhost:${container.getMappedPort(8545)}`
             )
         );
+        web3.eth.transactionConfirmationBlocks = 0;
 
         // move some money to our address
         await web3.eth.personal.sendTransaction(
